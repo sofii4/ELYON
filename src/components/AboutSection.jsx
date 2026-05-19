@@ -30,7 +30,7 @@ export default function AboutSection() {
           className="reveal-left relative overflow-hidden h-[500px] lg:h-auto"
         >
           <img
-            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&q=80&auto=format&fit=crop"
+            src="src/assets/images/casal2.png"
             alt="Sócios da Elyon Construções"
             className="w-full h-full object-cover object-top"
           />
@@ -65,7 +65,7 @@ export default function AboutSection() {
                 mas um propósito: transformar projetos em realidade com responsabilidade e excelência.
               </p>
               <p>
-                Ao longo de mais de uma década, aprendemos que cada obra carrega uma história única.
+                Ao longo de mais de duas décadas, aprendemos que cada obra carrega uma história única.
                 Por trás de cada metro quadrado há um sonho, um plano de vida, uma conquista que
                 levou anos de dedicação para se tornar possível.
               </p>
