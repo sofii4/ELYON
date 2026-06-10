@@ -1,43 +1,78 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
+import devilleImg from '../assets/images/empr/deville1.png'
+import marajoImg from '../assets/images/empr/marajo1.png'
+import paratiImg from '../assets/images/empr/parati1.png'
+import santaMatildeImg from '../assets/images/empr/stamatilde1.png'
+import veronaImg from '../assets/images/empr/verona1.png'
 
 const obras = [
   {
     id: 1,
-    title: 'Residência Vista Verde',
-    tipo: 'Alto Padrão',
-    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80&auto=format&fit=crop',
+    title: 'Deville',
+    tipo: 'Residencial',
+    img: devilleImg,
   },
   {
     id: 2,
-    title: 'Edifício Solaris',
-    tipo: 'Corporativo',
-    img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80&auto=format&fit=crop',
+    title: 'Parati',
+    tipo: 'Residencial',
+    img: paratiImg,
   },
   {
     id: 3,
-    title: 'Casa Serra & Lago',
+    title: 'Marajó',
     tipo: 'Residencial',
-    img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80&auto=format&fit=crop',
+    img: marajoImg,
   },
   {
     id: 4,
-    title: 'Condomínio Alvorada',
-    tipo: 'Incorporação',
-    img: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80&auto=format&fit=crop',
+    title: 'Santa Matilde',
+    tipo: 'Residencial',
+    img: santaMatildeImg,
   },
   {
     id: 5,
-    title: 'Loft Centro Histórico',
-    tipo: 'Comercial',
-    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80&auto=format&fit=crop',
+    title: 'Verona',
+    tipo: 'Residencial',
+    img: veronaImg,
   },
   {
     id: 6,
-    title: 'Villa Montanha Azul',
-    tipo: 'Alto Padrão',
+    title: 'Casa Bruno',
+    tipo: 'Projeto',
     img: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80&auto=format&fit=crop',
+  },
+  {
+    id: 7,
+    title: 'Casa Karina',
+    tipo: 'Projeto',
+    img: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&q=80&auto=format&fit=crop',
+  },
+  {
+    id: 8,
+    title: 'Casa Eleandro',
+    tipo: 'Projeto',
+    img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80&auto=format&fit=crop',
+  },
+  {
+    id: 9,
+    title: 'Casa Charlene',
+    tipo: 'Projeto',
+    img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80&auto=format&fit=crop',
+  },
+  {
+    id: 10,
+    title: 'Casa Mônica',
+    tipo: 'Projeto',
+    img: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80&auto=format&fit=crop',
+  },
+  {
+    id: 11,
+    title: 'El Dorado',
+    tipo: 'Vem Aí!',
+    img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80&auto=format&fit=crop',
   },
 ]
 
@@ -47,7 +82,7 @@ const obrasLoop = [...obras, ...obras]
 function ObrasCard({ obra }) {
   return (
     <div className="flex-shrink-0 w-72 md:w-80 relative group overflow-hidden">
-      <div className="aspect-[4/5] overflow-hidden">
+      <div className="aspect-[4/5] overflow-hidden bg-elyon-dark/80">
         <img
           src={obra.img}
           alt={obra.title}
@@ -55,7 +90,7 @@ function ObrasCard({ obra }) {
         />
       </div>
       {/* Overlay hover */}
-      <div className="absolute inset-0 bg-gradient-to-t from-elyon-dark via-elyon-dark/0 to-transparent opacity-80" />
+      <div className="absolute inset-0 bg-gradient-to-t from-elyon-dark via-elyon-dark/10 to-transparent opacity-90" />
       <div className="absolute bottom-0 left-0 right-0 p-6">
         <div className="font-arimo text-elyon-gold text-xs tracking-widest uppercase mb-1">
           {obra.tipo}

@@ -3,73 +3,78 @@ import { Link } from 'react-router-dom'
 import { ArrowLeft, MapPin, Maximize2, BedDouble, Bath, MessageCircle } from 'lucide-react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import devilleImg from '../assets/images/empr/deville1.png'
+import marajoImg from '../assets/images/empr/marajo1.png'
+import paratiImg from '../assets/images/empr/parati1.png'
+import santaMatildeImg from '../assets/images/empr/stamatilde1.png'
+import veronaImg from '../assets/images/empr/verona1.png'
 
 const WHATSAPP_URL = `https://wa.me/5549999999999?text=${encodeURIComponent('Olá! Tenho interesse em um dos empreendimentos do portfólio Elyon.')}`
 
 const projects = [
   {
     id: 1,
-    title: 'Residência Vista Verde',
+    title: 'Residencial Deville',
     description:
-      'Uma residência de alto padrão projetada para integrar o interior ao paisagismo exuberante. Cada ambiente foi pensado para maximizar a luz natural e criar fluxos harmoniosos entre os espaços sociais e íntimos.',
-    local:    'Xanxerê, SC',
-    area:     '480 m²',
-    quartos:  4,
-    banheiros: 5,
-    tipo:     'Residencial Alto Padrão',
-    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80&auto=format&fit=crop',
+      'O termo Deville vem do modelo Sedan DeVille, um clássico de estilo americano com grandes dimensões. O residencial oferece 32 apartamentos com acabamento em alto padrão, com metragens de 66 m² e 97 m², opções de 2 ou 3 dormitórios (sendo 1 suíte), cozinha e sala integradas, área de serviço, banheiro social, 1 vaga de garagem, além de salão de festas e vagas adicionais para venda.',
+    local:    'Bairro La Salle, Xanxerê, SC',
+    area:     '66 a 97 m²',
+    quartos:  2,
+    banheiros: 1,
+    tipo:     'Residencial',
+    img: devilleImg,
     ano: '2024',
   },
   {
     id: 2,
-    title: 'Edifício Solaris',
+    title: 'Residencial Parati',
     description:
-      'Empreendimento corporativo de 12 pavimentos com fachada envidraçada e sistemas de eficiência energética. Projetado para ser referência em sustentabilidade e modernidade no Centro-Oeste catarinense.',
-    local:    'Chapecó, SC',
-    area:     '6.200 m²',
-    quartos:  0,
-    banheiros: 24,
-    tipo:     'Corporativo',
-    img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80&auto=format&fit=crop',
+      'O termo Parati também remete a tranquilidade e serenidade, conceito que guiou este residencial em uma área calma para famílias. O empreendimento é um condomínio fechado com tipologias variadas: casas geminadas térreas de 50 m², 60 m² e 72 m², sobrados de 93 m² com 2 suítes e uma casa térrea independente de 100 m². O residencial conta com playground, pet play, chima roda, pavimentação em paver, iluminação externa solar, porteiro eletrônico, luz e água individualizadas.',
+    local:    'Xanxerê, SC',
+    area:     '50 a 100 m²',
+    quartos:  2,
+    banheiros: 1,
+    tipo:     'Residencial',
+    img: paratiImg,
     ano: '2023',
   },
   {
     id: 3,
-    title: 'Casa Serra & Lago',
+    title: 'Residencial Marajó',
     description:
-      'Residência de fim de semana com conceito de integração total com a natureza. Estrutura em concreto aparente e madeira de reflorestamento, piscina natural e jardim com espelho d\'água.',
-    local:    'Xanxerê, SC',
-    area:     '320 m²',
-    quartos:  3,
-    banheiros: 4,
-    tipo:     'Residencial — Casa de Campo',
-    img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=900&q=80&auto=format&fit=crop',
+      'Marajó, alem de significar anteparo do mar em tupi, tambem remete ao clássico brasileiro derivado do Chevette. Os traços desse queridinho inspiraram a proposta arquitetônica do residencial, reforcando sua exclusividade. O projeto possui 5 casas geminadas térreas de aproximadamente 51,5 m², com 2 quartos, cozinha e sala integradas, área de serviço, banheiro social, quintal externo, vaga de garagem, laje e pavimentação asfáltica.',
+    local:    'Próximo ao Hiper Badotti, Xanxerê, SC',
+    area:     '51,5 m²',
+    quartos:  2,
+    banheiros: 1,
+    tipo:     'Residencial',
+    img: marajoImg,
     ano: '2023',
   },
   {
     id: 4,
-    title: 'Condomínio Alvorada',
+    title: 'Residencial Santa Matilde',
     description:
-      'Condomínio residencial fechado com 32 unidades, área de lazer completa, portaria 24h e infraestrutura para veículos elétricos. Localizado em área nobre com acesso rápido ao centro.',
-    local:    'Xanxerê, SC',
-    area:     '12.400 m² (total)',
-    quartos:  3,
-    banheiros: 3,
-    tipo:     'Incorporação — Condomínio',
-    img: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=900&q=80&auto=format&fit=crop',
+      'Santa Matilde faz referencia a um carro brasileiro marcante, simbolo de desempenho e beleza, e tambem carrega o significado de força na batalha. O residencial conta com 34 apartamentos no Bairro Nossa Senhora de Lourdes, com área privativa de aproximadamente 41,2179 m² e área total de 55,0335 m², com 2 dormitórios, cozinha e sala integradas, área de serviço, banheiro social, ponto de gás para churrasqueira e vaga de estacionamento. O empreendimento ainda oferece playground, salão de festas, elevador e pavimentação de calçamento.',
+    local:    'Bairro Nossa Senhora de Lourdes, Xanxerê, SC',
+    area:     '41,2 m² privativos',
+    quartos:  2,
+    banheiros: 1,
+    tipo:     'Residencial',
+    img: santaMatildeImg,
     ano: '2022',
   },
   {
     id: 5,
-    title: 'Loft Centro Histórico',
+    title: 'Residencial Verona',
     description:
-      'Reforma completa e retrofit de um edifício histórico transformado em lofts comerciais premium. O projeto preservou a essência arquitetônica original enquanto incorporou tecnologia e modernidade.',
-    local:    'Chapecó, SC',
-    area:     '1.800 m²',
-    quartos:  0,
-    banheiros: 12,
-    tipo:     'Comercial — Retrofit',
-    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80&auto=format&fit=crop',
+      'O nome Verona inspira os traços da formação arquitetônica do residencial e reforçam sua exclusividade. O projeto possui 2 pavimentos, porcelanato 60x60, portas laqueadas, aberturas com vidro laminado, encanamento preparado para água quente, espera para climatizador, acabamento elétrico de alto padrão, ótima localização, pavimentação asfáltica e área de lazer.',
+    local:    'Xanxerê, SC',
+    area:     '2 pavimentos',
+    quartos:  1,
+    banheiros: 1,
+    tipo:     'Residencial',
+    img: veronaImg,
     ano: '2022',
   },
   {
