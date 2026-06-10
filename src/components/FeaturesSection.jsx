@@ -46,6 +46,10 @@ export default function FeaturesSection() {
   return (
     <section className="py-28 bg-elyon-dark-2 relative overflow-hidden">
 
+      <div className="absolute inset-0 bg-gradient-to-br from-[#2a2a28] via-[#1d1d1b] to-[#1e325c]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(215,180,106,0.18),transparent_34%),radial-gradient(circle_at_75%_30%,rgba(30,50,92,0.28),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.04),transparent_36%)]" />
+      <div className="absolute inset-0 arch-grid opacity-[0.06]" />
+
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
         {/* CABEÇALHO */}

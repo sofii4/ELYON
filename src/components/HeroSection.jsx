@@ -80,6 +80,15 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-elyon-dark">
 
+      {/* LION LOGO DECORATIVE */}
+      <div className="absolute inset-y-0 left-0 z-[1] flex items-center pointer-events-none -translate-x-[24%] lg:-translate-x-[36%]">
+        <img
+          src={lionImg}
+          alt="Logo do leão Elyon"
+          className={`hidden lg:block w-[64vw] max-w-[760px] min-w-[560px] object-contain object-left transition-all duration-1000 ease-out ${showLion ? 'opacity-15 translate-x-0' : '-translate-x-24 opacity-0'}`}
+        />
+      </div>
+
       {/* BACKGROUND: imagem de obra premium com overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -95,7 +104,7 @@ export default function HeroSection() {
       </div>
 
       {/* CONTEÚDO PRINCIPAL */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 pb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 pb-16 lg:pl-24 xl:pl-32">
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="max-w-3xl">
             {/* TÍTULO PRINCIPAL */}
