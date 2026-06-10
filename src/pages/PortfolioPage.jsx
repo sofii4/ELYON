@@ -1,15 +1,16 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, MapPin, Maximize2, BedDouble, Bath, MessageCircle } from 'lucide-react'
+import { ArrowLeft, MapPin, Maximize2, BedDouble, Bath } from 'lucide-react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import WhatsAppIcon from '../components/WhatsAppIcon'
 import devilleImg from '../assets/images/empr/deville1.png'
 import marajoImg from '../assets/images/empr/marajo1.png'
 import paratiImg from '../assets/images/empr/parati1.png'
 import santaMatildeImg from '../assets/images/empr/stamatilde1.png'
 import veronaImg from '../assets/images/empr/verona1.png'
 
-const WHATSAPP_URL = `https://wa.me/5549999999999?text=${encodeURIComponent('Olá! Tenho interesse em um dos empreendimentos do portfólio Elyon.')}`
+const WHATSAPP_URL = `https://wa.me/554934300522?text=${encodeURIComponent('Olá! Tenho interesse em um dos empreendimentos do portfólio Elyon.')}`
 
 const projects = [
   {
@@ -21,22 +22,22 @@ const projects = [
     area:     '66 a 97 m²',
     quartos:  2,
     banheiros: 1,
-    tipo:     'Residencial',
+    tipo:     'Predial',
     img: devilleImg,
-    ano: '2024',
+    status: 'Finalizando',
   },
   {
     id: 2,
     title: 'Residencial Parati',
     description:
       'O termo Parati também remete a tranquilidade e serenidade, conceito que guiou este residencial em uma área calma para famílias. O empreendimento é um condomínio fechado com tipologias variadas: casas geminadas térreas de 50 m², 60 m² e 72 m², sobrados de 93 m² com 2 suítes e uma casa térrea independente de 100 m². O residencial conta com playground, pet play, chima roda, pavimentação em paver, iluminação externa solar, porteiro eletrônico, luz e água individualizadas.',
-    local:    'Xanxerê, SC',
+    local:    'Bairro Primo Tacca, Xanxerê, SC',
     area:     '50 a 100 m²',
     quartos:  2,
     banheiros: 1,
-    tipo:     'Residencial',
+    tipo:     'Condomínio Fechado',
     img: paratiImg,
-    ano: '2023',
+    status: 'Entregue',
   },
   {
     id: 3,
@@ -47,9 +48,9 @@ const projects = [
     area:     '51,5 m²',
     quartos:  2,
     banheiros: 1,
-    tipo:     'Residencial',
+    tipo:     'Condomínio',
     img: marajoImg,
-    ano: '2023',
+    status: 'Entregue',
   },
   {
     id: 4,
@@ -60,62 +61,24 @@ const projects = [
     area:     '41,2 m² privativos',
     quartos:  2,
     banheiros: 1,
-    tipo:     'Residencial',
+    tipo:     'Predial',
     img: santaMatildeImg,
-    ano: '2022',
+    status: 'Entregue',
   },
   {
     id: 5,
     title: 'Residencial Verona',
     description:
       'O nome Verona inspira os traços da formação arquitetônica do residencial e reforçam sua exclusividade. O projeto possui 2 pavimentos, porcelanato 60x60, portas laqueadas, aberturas com vidro laminado, encanamento preparado para água quente, espera para climatizador, acabamento elétrico de alto padrão, ótima localização, pavimentação asfáltica e área de lazer.',
-    local:    'Xanxerê, SC',
+    local:    'Bairro São Jorge, Xanxerê, SC',
     area:     '2 pavimentos',
     quartos:  1,
     banheiros: 1,
-    tipo:     'Residencial',
+    tipo:     'Condomínio',
     img: veronaImg,
-    ano: '2022',
+    status: 'Entregue',
   },
-  {
-    id: 6,
-    title: 'Villa Montanha Azul',
-    description:
-      'Mansão residencial com projeto paisagístico premiado, piscina aquecida, adega climatizada e espaço gourmet externo. Um dos projetos mais ambiciosos já executados pela Elyon em termos de refinamento.',
-    local:    'Xanxerê, SC',
-    area:     '780 m²',
-    quartos:  5,
-    banheiros: 6,
-    tipo:     'Residencial — Mansão',
-    img: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=900&q=80&auto=format&fit=crop',
-    ano: '2021',
-  },
-  {
-    id: 7,
-    title: 'Clínica Harmonia',
-    description:
-      'Complexo clínico com projeto arquitetônico humanizado, priorizando conforto e acolhimento dos pacientes. Ambientes projetados para reduzir estresse e promover bem-estar durante o atendimento.',
-    local:    'Xanxerê, SC',
-    area:     '2.200 m²',
-    quartos:  0,
-    banheiros: 18,
-    tipo:     'Saúde — Clínica',
-    img: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=900&q=80&auto=format&fit=crop',
-    ano: '2021',
-  },
-  {
-    id: 8,
-    title: 'Residência Pedra & Aço',
-    description:
-      'Casa minimalista brutalista com fachada em pedra canga e estrutura de aço aparente. Interior de conceito aberto com pé-direito duplo, integração total sala-varanda e automação residencial completa.',
-    local:    'Chapecó, SC',
-    area:     '540 m²',
-    quartos:  4,
-    banheiros: 5,
-    tipo:     'Residencial — Brutalista',
-    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&auto=format&fit=crop',
-    ano: '2020',
-  },
+  
 ]
 
 function ProjectCard({ project, reverse }) {
@@ -143,9 +106,9 @@ function ProjectCard({ project, reverse }) {
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-elyon-dark/60 to-transparent lg:bg-none" />
-        {/* Ano badge */}
+        {/* Status badge */}
         <div className="absolute top-6 left-6 font-aktiv font-bold text-xs tracking-[0.3em] text-elyon-gold border border-elyon-gold/40 bg-elyon-dark/60 backdrop-blur-sm px-4 py-2 uppercase">
-          {project.ano}
+          {project.status}
         </div>
       </div>
 
@@ -195,7 +158,7 @@ function ProjectCard({ project, reverse }) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border border-elyon-gold/30 hover:border-elyon-gold hover:bg-elyon-gold hover:text-elyon-dark text-elyon-gold font-arimo text-xs px-6 py-3 tracking-widest uppercase transition-all duration-300"
           >
-            <MessageCircle size={14} />
+            <WhatsAppIcon className="w-[14px] h-[14px]" />
             Tenho interesse
           </a>
         </div>
@@ -267,7 +230,7 @@ export default function PortfolioPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-elyon-gold hover:bg-elyon-gold-light text-elyon-dark font-aktiv font-bold px-8 py-4 tracking-widest uppercase transition-all duration-300 hover:scale-105 shadow-xl shadow-elyon-gold/20"
             >
-              <MessageCircle size={20} />
+              <WhatsAppIcon className="w-5 h-5" />
               Falar com a Elyon
             </a>
           </div>

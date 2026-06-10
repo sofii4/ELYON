@@ -1,18 +1,61 @@
 import { useEffect, useRef, useState } from 'react'
-import { ChevronDown, MessageCircle } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import lionImg from '../assets/images/2.png'
+import WhatsAppIcon from './WhatsAppIcon'
 
-const WHATSAPP_URL = `https://wa.me/5549999999999?text=${encodeURIComponent('Olá! Gostaria de conversar sobre meu projeto.')}`
+const WHATSAPP_URL = `https://wa.me/554934300522?text=${encodeURIComponent('Olá! Gostaria de conversar sobre meu projeto.')}`
+
+// Componente de counter animado
+function CounterCard({ targetNumber, suffix, label, duration = 2000 }) {
+  const [count, setCount] = useState(0)
+  const [hasAnimated, setHasAnimated] = useState(false)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true)
+          
+          const startTime = Date.now()
+          const interval = setInterval(() => {
+            const elapsed = Date.now() - startTime
+            const progress = Math.min(elapsed / duration, 1)
+            setCount(Math.floor(targetNumber * progress))
+            
+            if (progress === 1) clearInterval(interval)
+          }, 30)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [targetNumber, duration, hasAnimated])
+
+  return (
+    <div ref={ref} className="flex flex-col items-center flex-shrink-0">
+      <div className="font-aktiv font-bold text-2xl text-white mb-4">
+        {count}{suffix}
+      </div>
+      <p className="font-arimo text-elyon-gold text-xs tracking-wide uppercase text-center whitespace-pre-line">
+        {label}
+      </p>
+    </div>
+  )
+}
 
 export default function HeroSection() {
   const textRef = useRef(null)
   const subtitleRef = useRef(null)
   const ctaRef = useRef(null)
+  const statsRef = useRef(null)
   const [showLion, setShowLion] = useState(false)
 
   useEffect(() => {
     // Stagger animation on mount
-    const els = [textRef.current, subtitleRef.current, ctaRef.current]
+    const els = [textRef.current, subtitleRef.current, ctaRef.current, statsRef.current]
     els.forEach((el, i) => {
       if (!el) return
       el.style.opacity = '0'
@@ -84,7 +127,7 @@ export default function HeroSection() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-elyon-gold hover:bg-elyon-gold-light text-elyon-dark font-aktiv font-bold text-sm px-8 py-4 tracking-widest uppercase transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-elyon-gold/20"
               >
-                <MessageCircle size={18} />
+                <WhatsAppIcon className="w-[18px] h-[18px]" />
                 Fale com um Especialista
               </a>
               <button
@@ -95,6 +138,21 @@ export default function HeroSection() {
               </button>
             </div>
 
+            {/* ESTATÍSTICAS COM CONTAGEM ANIMADA */}
+            <div ref={statsRef} className="mt-12 flex flex-nowrap gap-16 md:gap-20 items-end">
+              <CounterCard targetNumber={2} suffix="" label="Décadas de 
+              Experiência" duration={2000} />
+              <CounterCard targetNumber={35} suffix=" mil" label="M² de Área 
+              Construída" duration={2500} />
+              <div className="flex flex-col items-center flex-shrink-0">
+                <div className="font-aktiv font-bold text-2xl text-white mb-4">
+                  ✓
+                </div>
+                <p className="font-arimo text-elyon-gold text-xs tracking-wide uppercase text-center">
+                  Certificações de<br />Qualidade
+                </p>
+              </div>
+            </div>
             
           </div>
 

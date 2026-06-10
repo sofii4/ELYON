@@ -38,42 +38,6 @@ const obras = [
     tipo: 'Residencial',
     img: veronaImg,
   },
-  {
-    id: 6,
-    title: 'Casa Bruno',
-    tipo: 'Projeto',
-    img: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80&auto=format&fit=crop',
-  },
-  {
-    id: 7,
-    title: 'Casa Karina',
-    tipo: 'Projeto',
-    img: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&q=80&auto=format&fit=crop',
-  },
-  {
-    id: 8,
-    title: 'Casa Eleandro',
-    tipo: 'Projeto',
-    img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80&auto=format&fit=crop',
-  },
-  {
-    id: 9,
-    title: 'Casa Charlene',
-    tipo: 'Projeto',
-    img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80&auto=format&fit=crop',
-  },
-  {
-    id: 10,
-    title: 'Casa Mônica',
-    tipo: 'Projeto',
-    img: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80&auto=format&fit=crop',
-  },
-  {
-    id: 11,
-    title: 'El Dorado',
-    tipo: 'Vem Aí!',
-    img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80&auto=format&fit=crop',
-  },
 ]
 
 // Duplica para carrossel infinito

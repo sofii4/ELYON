@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, MessageCircle } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import logoImg from '../assets/images/dourado.png'
+import WhatsAppIcon from './WhatsAppIcon'
 
-const WHATSAPP_NUMBER = '5549999999999' // Substitua pelo número real
+const WHATSAPP_NUMBER = '554934300522'
 const WHATSAPP_MSG = encodeURIComponent('Olá! Vim pelo site da Elyon Construções e gostaria de mais informações.')
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`
 
@@ -77,7 +78,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-elyon-gold hover:bg-elyon-gold-light text-elyon-dark font-aktiv font-bold text-sm px-5 py-2.5 tracking-widest uppercase transition-all duration-300 hover:scale-105 active:scale-95"
           >
-            <MessageCircle size={16} />
+            <WhatsAppIcon className="w-4 h-4" />
             Fale Conosco
           </a>
         </div>
@@ -111,7 +112,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="mt-2 flex items-center justify-center gap-2 bg-elyon-gold text-elyon-dark font-aktiv font-bold text-sm px-5 py-3 tracking-widest uppercase"
           >
-            <MessageCircle size={16} />
+            <WhatsAppIcon className="w-4 h-4" />
             Fale Conosco
           </a>
         </div>
