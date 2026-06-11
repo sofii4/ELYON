@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import minhaImagem from '../assets/images/casal2.png';
 
 export default function AboutSection() {
   const leftRef  = useRef(null)
@@ -30,7 +31,7 @@ export default function AboutSection() {
           className="reveal-left relative overflow-hidden h-[500px] lg:h-auto"
         >
           <img
-            src="src/assets/images/casal2.png"
+            src={minhaImagem}
             alt="Sócios da Elyon Construções"
             className="w-full h-full object-cover object-top"
           />
