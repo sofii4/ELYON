@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
-import lionImg from '../assets/images/12.png'
+import lionImg from '../assets/images/2.png'
+import backgroundImg from '../assets/images/hero-bg.jpg'
 import WhatsAppIcon from './WhatsAppIcon'
 
 const WHATSAPP_URL = `https://wa.me/554934300522?text=${encodeURIComponent('Olá! Gostaria de conversar sobre meu projeto.')}`
@@ -85,14 +86,14 @@ export default function HeroSection() {
         <img
           src={lionImg}
           alt="Logo do leão Elyon"
-          className={`hidden lg:block w-[64vw] max-w-[760px] min-w-[560px] object-contain object-left transition-all duration-1000 ease-out ${showLion ? 'opacity-12 translate-x-0' : '-translate-x-24 opacity-0'}`}
+          className={`hidden lg:block w-[64vw] max-w-[700px] min-w-[560px] object-contain object-left transition-all duration-1000 ease-out ${showLion ? 'opacity-5 translate-x-0' : '-translate-x-24 opacity-0'}`}
         />
       </div>
 
       {/* BACKGROUND: imagem de obra premium com overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&auto=format&fit=crop"
+          src={backgroundImg}
           alt="Obra de alto padrão Elyon"
           className="w-full h-full object-cover opacity-30"
         />
@@ -110,19 +111,17 @@ export default function HeroSection() {
             {/* TÍTULO PRINCIPAL */}
             <div ref={subtitleRef} className="mb-8">
               <div className="overflow-hidden mb-2">
-                <h1 className="font-aktiv font-bold leading-none text-[clamp(5rem,14vw,11rem)] text-elyon-gold tracking-tighter">
+                <h1 className="font-aktiv font-bold leading-none text-[clamp(5rem,14vw,10rem)] text-elyon-gold tracking-tighter">
                   ELYON
                 </h1>
               </div>
               <div className="overflow-hidden">
-                <h2 className="font-aktiv font-light text-[clamp(1.5rem,4vw,3rem)] text-white/90 tracking-[0.15em] uppercase leading-tight">
+                <h2 className="font-aktiv font-light text-[clamp(1.5rem,4vw,2rem)] text-white/90 tracking-[0.15em] uppercase leading-tight">
                   Construções
                 </h2>
               </div>
 
-            
-
-              <p className="font-arimo text-white/60 text-lg leading-relaxed mt-6 max-w-xl">
+              <p className="font-arimo text-white/40 ext-lg leading-relaxed mt-6 max-w-xl">
                 Transformamos visões em legados. Cada projeto é conduzido com a precisão técnica
                 e o cuidado que a sua conquista merece.
               </p>
