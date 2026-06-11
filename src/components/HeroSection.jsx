@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
-import lionImg from '../assets/images/2.png'
+import lionImg from '../assets/images/12.png'
 import WhatsAppIcon from './WhatsAppIcon'
 
 const WHATSAPP_URL = `https://wa.me/554934300522?text=${encodeURIComponent('Olá! Gostaria de conversar sobre meu projeto.')}`
@@ -85,7 +85,7 @@ export default function HeroSection() {
         <img
           src={lionImg}
           alt="Logo do leão Elyon"
-          className={`hidden lg:block w-[64vw] max-w-[760px] min-w-[560px] object-contain object-left transition-all duration-1000 ease-out ${showLion ? 'opacity-15 translate-x-0' : '-translate-x-24 opacity-0'}`}
+          className={`hidden lg:block w-[64vw] max-w-[760px] min-w-[560px] object-contain object-left transition-all duration-1000 ease-out ${showLion ? 'opacity-12 translate-x-0' : '-translate-x-24 opacity-0'}`}
         />
       </div>
 

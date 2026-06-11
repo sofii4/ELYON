@@ -120,6 +120,19 @@ Ajuste as informações de contato em:
 
 ---
 
+## 🚀 Deploy na Vercel
+
+Este projeto já está pronto para publicar como SPA na Vercel.
+
+- Framework preset: `Vite`
+- Build command: `npm run build`
+- Output directory: `dist`
+- Roteamento SPA: configurado em `vercel.json`
+
+Não versionar a pasta `dist/` no repositório.
+
+---
+
 ## 🖼️ Trocar imagens
 
 As imagens atuais são do Unsplash (placeholders).
