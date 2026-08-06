@@ -6,6 +6,9 @@ import marajoImg from '../assets/images/empr/marajo1.png'
 import paratiImg from '../assets/images/empr/parati1.png'
 import santaMatildeImg from '../assets/images/empr/stamatilde1.png'
 import veronaImg from '../assets/images/empr/verona1.png'
+import BSImg from '../assets/images/empr/BS.png'
+import ELImg from '../assets/images/empr/EL.png'
+import KSImg from '../assets/images/empr/KS.png'
 
 const obras = [
   {
@@ -37,6 +40,24 @@ const obras = [
     title: 'Verona',
     tipo: 'Residencial',
     img: veronaImg,
+  },
+  {
+    id: 6,
+    title: 'BS',
+    tipo: 'Casa',
+    img: BSImg,
+  },
+  {
+    id: 7,
+    title: 'EL',
+    tipo: 'Casa',
+    img: ELImg,
+  },
+  {
+    id: 8,
+    title: 'KS',
+    tipo: 'Casa',
+    img: KSImg,
   },
 ]
 
@@ -71,7 +92,8 @@ export default function WorksSection() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('visible')),
+      (entries) =>
+        entries.forEach((e) => e.isIntersecting && e.target.classList.add('visible')),
       { threshold: 0.2 }
     )
     if (headerRef.current) observer.observe(headerRef.current)
@@ -81,11 +103,16 @@ export default function WorksSection() {
   return (
     <section id="obras" className="py-28 bg-elyon-dark overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-12">
-        <div ref={headerRef} className="reveal flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div
+          ref={headerRef}
+          className="reveal flex flex-col md:flex-row md:items-end justify-between gap-6"
+        >
           <div>
             <div className="flex items-center gap-3 mb-4">
               <span className="w-8 h-px bg-elyon-gold" />
-              <span className="font-arimo text-elyon-gold text-xs tracking-[0.4em] uppercase">Portfólio</span>
+              <span className="font-arimo text-elyon-gold text-xs tracking-[0.4em] uppercase">
+                Portfólio
+              </span>
             </div>
             <h2 className="font-aktiv font-bold text-4xl md:text-5xl text-white">
               Conheça nossas <span className="text-elyon-gold">Obras</span>
@@ -96,7 +123,10 @@ export default function WorksSection() {
             className="group flex items-center gap-3 border border-elyon-gold/30 hover:border-elyon-gold text-elyon-gold font-arimo text-sm px-6 py-3 tracking-wider uppercase transition-all duration-300 hover:bg-elyon-gold hover:text-elyon-dark self-start md:self-auto"
           >
             Ver portfólio completo
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+            <ArrowRight
+              size={16}
+              className="group-hover:translate-x-1 transition-transform duration-300"
+            />
           </Link>
         </div>
       </div>
@@ -108,7 +138,7 @@ export default function WorksSection() {
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-elyon-dark to-transparent z-10 pointer-events-none" />
 
         <div className="overflow-hidden">
-          <div className="carousel-track gap-5 px-6">
+          <div className="carousel-track flex w-max gap-5 px-6">
             {obrasLoop.map((obra, i) => (
               <ObrasCard key={`${obra.id}-${i}`} obra={obra} />
             ))}
